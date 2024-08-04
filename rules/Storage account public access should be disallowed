@@ -1,0 +1,2 @@
+SecurityRecommendation 
+| where RecommendationName contains "Storage account public access should be disallowed"
