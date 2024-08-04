@@ -1,0 +1,2 @@
+SecurityEvent
+| where Account contains "ADSync" or SubjectUserName contains "ADSync" or EventID == "4648"
