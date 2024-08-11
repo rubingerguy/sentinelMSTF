@@ -1,0 +1,3 @@
+Usage
+| project TimeGenerated, DataType, Solution, Quantity, QuantityUnit
+| summarize IngestionVolumeMB=sum(Quantity) by bin(TimeGenerated, 24h), DataType, Solution,  QuantityUnit
