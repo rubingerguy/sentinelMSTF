@@ -1,0 +1,6 @@
+StorageBlobLogs
+| where OperationName contains "GetBlob"
+| where MetricResponseType has "success"
+| extend IP_noport = tostring(split(CallerIpAddress, ":")[0])
+| summarize FileDownloadCount= count() by IP_noport, AccountName, bin(TimeGenerated, 10m)
+| where FileDownloadCount >= 20
