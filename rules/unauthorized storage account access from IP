@@ -1,0 +1,5 @@
+
+StorageBlobLogs
+| where OperationName contains "list" or OperationName contains "get"
+| where MetricResponseType !has "success"
+| where CallerIpAddress !startswith "195.160.243." or CallerIpAddress has "199.203.102.98"
