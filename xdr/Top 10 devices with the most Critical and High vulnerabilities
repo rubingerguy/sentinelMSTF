@@ -1,0 +1,4 @@
+DeviceTvmSoftwareVulnerabilities
+| where VulnerabilitySeverityLevel has_any ('critical', 'High')
+| summarize count(), VulnerableCVE = make_set(CveId) by DeviceName
+| top 10 by count_
