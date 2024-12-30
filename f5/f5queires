@@ -1,0 +1,14 @@
+##Count how many LTM logs have been generated from different client IP addresses over time
+F5Telemetry_LTM_CL
+| summarize count() by client_ip_s, TimeGenerated
+| sort by TimeGenerated
+
+##Present the System Telemetry host names
+F5Telemetry_system_CL         
+| project hostname_s         
+| sort by TimeGenerated
+
+
+###Count how many ASM logs have been generated from different locations
+F5Telemetry_ASM_CL  
+| summarize count() by geo_location_s
