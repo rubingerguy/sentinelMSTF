@@ -9,6 +9,15 @@ F5Telemetry_system_CL
 | sort by TimeGenerated
 
 
+ASM
 ###Count how many ASM logs have been generated from different locations
 F5Telemetry_ASM_CL  
 | summarize count() by geo_location_s
+
+F5Telemetry_ASM_CL  
+| project hostname_s         
+| sort by TimeGenerated
+
+F5Telemetry_ASM_CL
+| summarize count() by client_ip_s, TimeGenerated
+| sort by TimeGenerated
