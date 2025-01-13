@@ -1,0 +1,3 @@
+Event
+| where TimeGenerated > ago(48h)
+| order by TimeGenerated desc
