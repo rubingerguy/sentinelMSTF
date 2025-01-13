@@ -1,0 +1,5 @@
+Heartbeat
+| where TimeGenerated > ago(24h)
+| where Computer has "<computer name>"
+| project TimeGenerated, Category, Version
+| order by TimeGenerated desc
